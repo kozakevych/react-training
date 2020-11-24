@@ -1,10 +1,20 @@
-import React from "react";
+import React from 'react';
+import Content from './components/Content';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+import ErrorBoundary from './ErrorBoundary';
+
+import './App.css'
 
 const App = () => {
     return (
         <div>
-            Welcome to the app!
+            <Header />
+            <Content />
+            <Footer />
         </div>
     )
 };
+
 export default App;

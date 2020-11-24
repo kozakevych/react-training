@@ -1,54 +1,33 @@
 {
-  "name": "react-training",
+  "name": "minimal-react-webpack-babel-setup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development --config webpack.config.js --open 'Google Chrome'",
-    "build": "webpack --mode production --config webpack.config.js",
-    "test": "jest"
+    "start": "webpack serve --config ./webpack.config.js --mode development",
+    "test": "echo \"No test specified\" && exit 0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kozakevych/react-training.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kozakevych/react-training/issues"
-  },
-  "homepage": "https://github.com/kozakevych/react-training#readme",
-  "dependencies": {
+  "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
-    "@babel/preset-react": "^7.12.5",
-    "babel-loader": "^8.2.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-redux": "^7.2.2",
-    "react-router": "^5.2.0",
-    "redux": "^4.0.5",
-    "webpack": "^5.4.0",
-    "webpack-cli": "^4.2.0",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "react-hot-loader": "^4.13.0",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"
   },
-  "devDependencies": {
-    "babel-jest": "^26.6.3",
-    "jest": "^26.6.3",
-    "react-test-renderer": "^17.0.1"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/**/*.test.{js,jsx}"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "statements": 80,
-        "branches": 0,
-        "functions": 0,
-        "lines": 0
-      }
-    }
+  "dependencies": {
+    "@material-ui/core": "^4.11.1",
+    "@material-ui/icons": "^4.9.1",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1"
   }
 }

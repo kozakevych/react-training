@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 
 import ErrorBoundary from './ErrorBoundary';
 
-import './App.css'
+import './App.scss'
 
 const App = () => {
     return (

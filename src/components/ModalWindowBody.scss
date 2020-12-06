@@ -1,5 +1,53 @@
 .modal-window-wrapper {
-    background: white;
-    height: 500px;
+    background: #232323;
+    color: white;
+    border: none;
+    outline: none;
+    height: 580px;
     width: 400px;
+    position: relative;
+    top: 5%;
+    margin: auto;
+    padding: 20px 50px;
+
+    .modal-window-title {
+        margin-top: 30px;
+    }
+
+    .form-control-wrapper {
+        margin: 10px 0;
+
+        input {
+            background: #555555;
+            color: white;
+            padding: 10px;
+            z-index: 1;
+        }
+        label {
+            color: #F65261;
+            z-index: 9;
+        }
+    }
+
+    .button-wrapper {
+        float: right;
+        padding: 10px 0;
+
+        .reset-button,
+        .submit-button {
+            border-radius: 3px;
+            width: 120px;
+        }
+
+        .reset-button {
+            margin-right: 10px;
+            background: transparent;
+            color: #F65261;
+            border: 1px solid #F65261;
+        }
+
+        .submit-button {
+            background: #F65261;
+        }
+    }
 }

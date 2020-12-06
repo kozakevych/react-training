@@ -14,24 +14,33 @@ import MovieDataMock from '../movieDataMock';
 import ModalWindowBody from './ModalWindowBody';
 
 
-const Content = () => {
+const Content = (props) => {
   const data = MovieDataMock;
 
   const [open, setOpen] = React.useState(false);
-  const [selectedMovie, setSelectedMovie] = React.useState({});
+  const [editedMovie, setEditedMovie] = React.useState({});
+  const [movieDetails, setMovieDetails] = React.useState({});
 
   const handleOpen = (item) => {
-    setSelectedMovie(item)
+    setEditedMovie(item)
     setOpen(true);
   };  
   const handleClose = () => {
     setOpen(false);
   };
 
+  const resetMovieValue = () => {
+    setEditedMovie({})
+  }
+
+  const onMovieClick = (item) => {
+    props.openDetails(item);
+  }
+
   return (
     <Grid container className="content-wrapper">
       {data && data.map((item, index) => (
-        <Box key={index} width={210} margin={10} my={5}>
+        <Box key={index} width={210} margin={10} my={5} onClick={() => onMovieClick(item)}>
             <EditIcon onClick={() => handleOpen(item)} />
             <DeleteIcon onClick={handleOpen} />
             <img style={{ width: 302, height: 378 }} alt={item.title} src={item.src} />
@@ -53,7 +62,7 @@ const Content = () => {
             onClose={handleClose}
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description">
-            {ModalWindowBody(selectedMovie)}
+            {ModalWindowBody(editedMovie, resetMovieValue, resetMovieValue)}
         </Modal>
     </Grid>
   );

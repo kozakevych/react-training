@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import './ModalWindowBody.scss';
 
 const ModalWindowBody = (data) => {
-    const {title, releaseDate, movieUrl, genre, overview, runtime} = data
+    const {title, createdAt, movieUrl, genre, overview, runtime} = data
     return (
         <div className="modal-window-wrapper">
             <Typography variant="h4" gutterBottom>
@@ -20,23 +20,23 @@ const ModalWindowBody = (data) => {
             </FormControl>
             <FormControl fullWidth>
                 <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Release Date</InputLabel>
-                <Input color="secondary" id="standard-adornment-amount" value="" />
+                <Input color="secondary" id="standard-adornment-amount" value={createdAt || ''} />
             </FormControl>
             <FormControl fullWidth>
                 <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Movie Url</InputLabel>
-                <Input color="secondary" id="standard-adornment-amount" value="" />
+                <Input color="secondary" id="standard-adornment-amount" value={movieUrl || ''} />
             </FormControl>
             <FormControl fullWidth>
                 <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Genre</InputLabel>
-                <Input color="secondary" id="standard-adornment-amount" value="" />
+                <Input color="secondary" id="standard-adornment-amount" value={genre || ''} />
             </FormControl>
             <FormControl fullWidth>
                 <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Overview</InputLabel>
-                <Input color="secondary" id="standard-adornment-amount" value="" />
+                <Input color="secondary" id="standard-adornment-amount" value={overview || ''} />
             </FormControl>
             <FormControl fullWidth>
                 <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Runtime</InputLabel>
-                <Input color="secondary" id="standard-adornment-amount" value="" />
+                <Input color="secondary" id="standard-adornment-amount" value={runtime || ''} />
             </FormControl>
                 <Button variant="contained">Reset</Button>
                 <Button variant="contained" color="secondary">Submit</Button>

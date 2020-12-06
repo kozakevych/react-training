@@ -4,6 +4,9 @@ const MovieDataMock = [
       title: 'Friends',
       genre: 'Comedy',
       createdAt: '1994-2004',
+      movieUrl: 'www.test.com',
+      overview: 'test',
+      runtime: 'test'
     },
     {
       src:
@@ -11,6 +14,9 @@ const MovieDataMock = [
       title: 'Friends',
       genre: 'Comedy',
       createdAt: '1994-2004',
+      movieUrl: 'www.test.com',
+      overview: 'test',
+      runtime: 'test'
     },
     {
       src:
@@ -18,6 +24,9 @@ const MovieDataMock = [
       title: 'Friends',
       genre: 'Comedy',
       createdAt: '1994-2004',
+      movieUrl: 'www.test.com',
+      overview: 'test',
+      runtime: 'test'
     },
     {
       src:
@@ -25,6 +34,9 @@ const MovieDataMock = [
       title: 'Friends',
       genre: 'Comedy',
       createdAt: '1994-2004',
+      movieUrl: 'www.test.com',
+      overview: 'test',
+      runtime: 'test'
     },
     {
       src:
@@ -32,6 +44,9 @@ const MovieDataMock = [
       title: 'Friends',
       genre: 'Comedy',
       createdAt: '1994-2004',
+      movieUrl: 'www.test.com',
+      overview: 'test',
+      runtime: 'test'
     },
     {
       src:
@@ -39,6 +54,9 @@ const MovieDataMock = [
       title: 'Friends',
       genre: 'Comedy',
       createdAt: '1994-2004',
+      movieUrl: 'www.test.com',
+      overview: 'test',
+      runtime: 'test'
     },
 ];
 

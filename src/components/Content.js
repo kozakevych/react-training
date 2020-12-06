@@ -14,10 +14,14 @@ import MovieDataMock from '../movieDataMock';
 import ModalWindowBody from './ModalWindowBody';
 
 
-const Content = ({loading}) => {
+const Content = () => {
   const data = MovieDataMock;
+
   const [open, setOpen] = React.useState(false);
+  const [selectedMovie, setSelectedMovie] = React.useState({});
+
   const handleOpen = (item) => {
+    setSelectedMovie(item)
     setOpen(true);
   };  
   const handleClose = () => {
@@ -28,7 +32,7 @@ const Content = ({loading}) => {
     <Grid container className="content-wrapper">
       {data && data.map((item, index) => (
         <Box key={index} width={210} margin={10} my={5}>
-            <EditIcon onClick={handleOpen} />
+            <EditIcon onClick={() => handleOpen(item)} />
             <DeleteIcon onClick={handleOpen} />
             <img style={{ width: 302, height: 378 }} alt={item.title} src={item.src} />
             <Box pr={2} style={{color: "lightgrey"}}>
@@ -49,7 +53,7 @@ const Content = ({loading}) => {
             onClose={handleClose}
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description">
-            {ModalWindowBody({})}
+            {ModalWindowBody(selectedMovie)}
         </Modal>
     </Grid>
   );

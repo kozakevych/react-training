@@ -6,99 +6,18 @@ import Typography from '@material-ui/core/Typography';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Modal from '@material-ui/core/Modal';
-import Button from '@material-ui/core/Button';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
 
-const bodyStyles = {
-    background: 'white',
-    height: '500px',
-    width: '400px'
-}
+import './Content.scss'
 
-const body = (
-    <div style={bodyStyles}>
-    <Typography variant="h4" gutterBottom>
-      Edit Movie
-    </Typography>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Title</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Release Date</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Movie Url</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Genre</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Overview</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Runtime</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-        <Button variant="contained">Reset</Button>
-        <Button variant="contained" color="secondary">Submit</Button>
-    </div>
-);
+import MovieDataMock from '../movieDataMock';
 
-const data = [
-  {
-    src:
-      'https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r193x272x4 1x, https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r386x544x4 2x',
-    title: 'Friends',
-    genre: 'Comedy',
-    createdAt: '1994-2004',
-  },
-  {
-    src:
-      'https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r193x272x4 1x, https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r386x544x4 2x',
-    title: 'Friends',
-    genre: 'Comedy',
-    createdAt: '1994-2004',
-  },
-  {
-    src:
-      'https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r193x272x4 1x, https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r386x544x4 2x',
-    title: 'Friends',
-    genre: 'Comedy',
-    createdAt: '1994-2004',
-  },
-  {
-    src:
-      'https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r193x272x4 1x, https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r386x544x4 2x',
-    title: 'Friends',
-    genre: 'Comedy',
-    createdAt: '1994-2004',
-  },
-  {
-    src:
-      'https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r193x272x4 1x, https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r386x544x4 2x',
-    title: 'Friends',
-    genre: 'Comedy',
-    createdAt: '1994-2004',
-  },
-  {
-    src:
-      'https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r193x272x4 1x, https://s3.vcdn.biz/static/f/2345547171/image.jpg/pt/r386x544x4 2x',
-    title: 'Friends',
-    genre: 'Comedy',
-    createdAt: '1994-2004',
-  },
-];
+import ModalWindowBody from './ModalWindowBody';
+
 
 const Content = ({loading}) => {
+  const data = MovieDataMock;
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
+  const handleOpen = (item) => {
     setOpen(true);
   };  
   const handleClose = () => {
@@ -106,8 +25,8 @@ const Content = ({loading}) => {
   };
 
   return (
-    <Grid container style={{background: '#272727', color: 'lightgrey'}}>
-      {data.map((item, index) => (
+    <Grid container className="content-wrapper">
+      {data && data.map((item, index) => (
         <Box key={index} width={210} margin={10} my={5}>
             <EditIcon onClick={handleOpen} />
             <DeleteIcon onClick={handleOpen} />
@@ -129,9 +48,8 @@ const Content = ({loading}) => {
             open={open}
             onClose={handleClose}
             aria-labelledby="simple-modal-title"
-            aria-describedby="simple-modal-description"
-        >
-            {body}
+            aria-describedby="simple-modal-description">
+            {ModalWindowBody({})}
         </Modal>
     </Grid>
   );

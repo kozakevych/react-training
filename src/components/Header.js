@@ -3,51 +3,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
-
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
 import Background from '../../assets/background.jpg';
-import Input from '@material-ui/core/Input';
-
-const bodyStyles = {
-    background: 'white',
-    height: '500px',
-    width: '400px'
-}
-
-const body = (
-    <div style={bodyStyles}>
-    <Typography variant="h4" gutterBottom>
-      Add Movie
-    </Typography>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Title</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Release Date</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Movie Url</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Genre</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Overview</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel htmlFor="standard-adornment-amount" style={{color: 'black'}}>Runtime</InputLabel>
-        <Input color="secondary" id="standard-adornment-amount" value="" />
-      </FormControl>
-        <Button variant="contained">Reset</Button>
-        <Button variant="contained" color="secondary">Submit</Button>
-    </div>
-);
+import ModalWindowBody from './ModalWindowBody';
 
 const Header = () => {
     const [open, setOpen] = React.useState(false);
@@ -84,7 +41,7 @@ const Header = () => {
                     aria-labelledby="simple-modal-title"
                     aria-describedby="simple-modal-description"
                 >
-                    {body}
+                    {ModalWindowBody({})}
                 </Modal>
         </div>
     )

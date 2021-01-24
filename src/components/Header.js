@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useContext, useEffect} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -6,23 +6,19 @@ import Modal from '@material-ui/core/Modal';
 import Background from '../../assets/background.jpg';
 import ModalWindowBody from './ModalWindowBody';
 import SearchIcon from '@material-ui/icons/Search';
+import { dataContext } from '../context/MainData';
+import useModalControls from '../hooks/useModalControls';
 
 import MovieDetails from './MovieDetails';
 
 const Header = (props) => {
-    const [open, setOpen] = React.useState(false);
-    // const [movieDetailsOpen, setMovieDetailsOpen] = React.useState(props.detailsOpen);
-    const handleOpen = () => {
-      setOpen(true);
-    };  
-    const handleClose = () => {
-      setOpen(false);
-    };
 
-    useEffect(() => {
-      console.log('test')
-      // console.log(movieDetailsOpen)
-    }, [props.detailsOpen])
+    const { searchFilm } = useContext(dataContext)
+    // const [movieDetailsOpen, setMovieDetailsOpen] = React.useState(props.detailsOpen);
+    const { open, handleOpen, handleClose } = useModalControls()
+
+
+    useEffect(() => {}, [props.detailsOpen])
 
     return (
         <div>
@@ -39,7 +35,7 @@ const Header = (props) => {
               <div style={{width: '100%'}}>
                 <div style={{margin: 'auto', width: '300px', paddingTop: '80px'}}>
                     <input style={{height: '30px'}} />
-                    <Button variant="contained" color="secondary">
+                    <Button variant="contained" color="secondary" onClick={() => searchFilm()}>
                         Search
                     </Button>
                 </div>
